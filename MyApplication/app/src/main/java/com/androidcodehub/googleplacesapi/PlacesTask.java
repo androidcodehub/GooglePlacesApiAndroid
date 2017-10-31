@@ -3,6 +3,7 @@ package com.androidcodehub.googleplacesapi;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -54,6 +55,7 @@ public class PlacesTask extends AsyncTask<Object, Integer, List<HashMap<String, 
             markerOptions.position(latLng);
             markerOptions.title(placeName + " : " + vicinity);
             googleMap.addMarker(markerOptions);
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         }
     }
 }

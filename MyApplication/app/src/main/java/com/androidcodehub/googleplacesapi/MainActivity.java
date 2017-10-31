@@ -85,8 +85,10 @@ locationAndContactsTask();
             	String type = placeText.getText().toString();
                 StringBuilder googlePlacesUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
                 googlePlacesUrl.append("location=" + latitude + "," + longitude);
-                googlePlacesUrl.append("&rankby=distance");
-                googlePlacesUrl.append("&types=" + type);
+                googlePlacesUrl.append("&radius=2000");
+                googlePlacesUrl.append("&type=restaurant");
+
+                googlePlacesUrl.append("&keyword=" + type);
            
                 googlePlacesUrl.append("&key=" + GOOGLE_API_KEY);
 
